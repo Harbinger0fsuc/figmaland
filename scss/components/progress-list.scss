@@ -1,0 +1,50 @@
+.progress-list {
+	@include generalVertSpacing(2.4rem);
+	$this: &;
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&-item__info {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		margin-right: -0.5rem;
+		margin-left: -0.5rem;
+		color: var(--color-comet-light);
+
+		& > * {
+			max-width: 50%;
+			padding-right: 0.5rem;
+			padding-left: 0.5rem;
+			margin-bottom: 0.7rem;
+		}
+	}
+
+	&-item__target,
+	&-item__stats {
+		font-size: 1.4rem;
+	}
+
+	&-item__stats {
+		font-weight: bold;
+		color: var(--color-comet);
+	}
+
+	// Modifiers for the component
+	&--reversed {
+		#{$this}__item {
+			flex-direction: column-reverse;
+		}
+
+		#{$this}-item__info {
+			& > * {
+				margin-top: 0.7rem;
+				margin-bottom: 0;
+			}
+		}
+	}
+}

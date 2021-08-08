@@ -1,0 +1,105 @@
+.header {
+	background-color: var(--color-white); // Because header is going to have this color even if body's color is changed
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 2.7rem 0 3rem;
+		margin: 0 -1.5rem;
+
+		& > * {
+			padding: 0 1.5rem;
+		}
+	}
+
+	.logo,
+	&__interaction {
+		width: 25%;
+	}
+
+	.logo {
+		img {
+			max-width: 100%;
+		}
+	}
+
+	.nav {
+		display: flex;
+		justify-content: center;
+		width: 50%;
+	}
+
+	&__interaction {
+		text-align: right;
+	}
+
+	.btn {
+		max-width: 230px; // for all buttons within header.
+	}
+
+	.nav-toggler {
+		display: none;
+	}
+}
+
+@include media("<tablet") {
+	.header {
+		position: relative;
+
+		&__inner {
+			margin: 0 -0.9rem;
+
+			& > * {
+				padding: 0 0.9rem;
+			}
+		}
+
+		.logo,
+		&__interaction {
+			width: auto;
+		}
+
+		&__interaction {
+			margin-left: auto;
+		}
+
+		.nav-toggler {
+			display: block;
+		}
+	}
+}
+
+@include media("<=xs-phone") {
+	.header {
+		&__inner {
+			flex-wrap: wrap;
+		}
+
+		.logo,
+		.nav-toggler {
+			width: 50%;
+		}
+
+		.logo {
+			text-align: center;
+		}
+
+		&__interaction {
+			order: 3;
+			width: 100%;
+			margin-left: initial;
+		}
+
+		.btn {
+			width: 100%;
+			max-width: 100%;
+		}
+
+		.nav-toggler {
+			display: flex;
+			justify-content: flex-end;
+			order: 2;
+		}
+	}
+}

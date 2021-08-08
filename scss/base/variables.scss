@@ -1,0 +1,220 @@
+// -- Common breakpoints
+// -- ligatured operators ≥ ≤
+$breakpoints: (
+	"full": 1920px,
+	"xl": 1680px,
+	"macbook": 1440px,
+	"ipad-pro": 1366px,
+	"md-desktop": 1200px,
+	"desktop": 1024px,
+	"tablet": 768px,
+	"phone": 667px,
+	"md-phone": 568px,
+	"sm-phone": 480px,
+	"xs-phone": 375px,
+);
+
+// -- Specific media
+$media-expressions: (
+	"iphoneX": "(min-width: 812px) and (max-height: 414px) and (orientation: landscape)",
+	"screen": "screen",
+	"print": "print",
+	"handheld": "handheld",
+	"landscape": "(orientation: landscape)",
+	"portrait": "(orientation: portrait)",
+	"retina2x": "(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)",
+	"retina3x": "(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)",
+);
+
+// -- Mobile menu breakpoint
+$menu-mobile-breakpoint: 768px;
+
+// -- SASS MAPs FOR Z-INDEXs
+$z-index: (
+	modal: 50,
+	navigation: 40,
+	header: 30,
+	commonOver: 20,
+	common: 10,
+	default: 1,
+	below: -1,
+	pit: -9000,
+);
+
+// -- Font family, fonts' folder variables
+// These variables are used in fonts.scss
+$font-root-folder: "../fonts/";
+$primary-font-name: "Roboto";
+$secondary-font-name: "NunitoSans";
+$accent-font-name: $secondary-font-name;
+$font-fallback: "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+$primary-font: $primary-font-name, $font-fallback;
+$secondary-font: $secondary-font-name, $font-fallback;
+$accent-font: $accent-font-name, $font-fallback;
+
+// -- Colors sheme
+$colors-general: (
+	"primary":      #0285e4,
+	"secondary":    #112d57,
+	"white":        #fff,
+	"black":        #000,
+	"gray":         #5c5c5c,
+	"gray-300":     #9aa1a9,
+	"gray-200":     #d0d0d0,
+	"gray-100":     #d3d3d3,
+	"athens-gray":  #f3f5f8,
+	"comet":        #505d70,
+	"comet-light":  #505d6f,
+	"blue":         #0285e4,
+	"blue-zodiac":  #112d57,
+	"dodger-blue":  #2d99ff,
+	"lightblue":    #e1f1fd,
+	"yellow":       #f3cd03,
+	"yellow-turbo": #ffe700,
+	"green":        #2cd9c5,
+	"purple":       #826af9,
+);
+
+// -- Color use
+$colors: colorScheme($colors-general);
+// $bodies: colorScheme($color-body);
+
+// -- Main menu background-color
+$menu-main-bg-color: #f9f9f9;
+
+// -- Colors theme
+// $color-brand: color('primary', $colors, true);
+$btn-bg-color: color("primary", $colors, true);
+
+// -- Headers
+// name use for media query `<${name}`. See `$breakpoints` variable for a possible key.
+$headers: (
+	"default": (
+		5.4rem,
+		5rem,
+		4rem,
+		3.6rem,
+		3.1rem,
+		2.4rem,
+	),
+	"tablet": (
+		5rem,
+		4.6rem,
+		4rem,
+		3.2rem,
+		2.7rem,
+		2.4rem,
+	),
+	"phone": (
+		4rem,
+		4rem,
+		4rem,
+		3rem,
+		2.5rem,
+		2.4rem,
+	),
+);
+
+// -- Paragraph
+// name use for media query `<${name}`. See `$breakpoints` variable for a possible key.
+// key use for class name. Example 'sm': 14px - create variable `--p-sm: 14px`;
+$paragraph: (
+	"default": (
+		"default": 2rem,
+		// "lg": 2.4rem,
+		"sm": 1.3rem,
+	),
+	"tablet": (
+		"default": 2rem,
+		// "lg": 2.3rem,
+		"sm": 1.3rem,
+	),
+);
+
+// -- Container
+$gutter: 3.4rem;
+$container: (
+	"default": 1017px,
+	"lg": 1115px,
+	"sm": 874px,
+);
+
+// -- Grid
+$grid: (
+	"column": 12,
+	"gutter": 21px,
+	"breakpoints": (
+		"xs": "sm-phone",
+		"sm": "phone",
+		"md": "tablet",
+		"lg": "desktop",
+		"xl": "md-desktop",
+		"xxl": "xl",
+	),
+);
+
+// -- Buttons size
+//
+// x - left/right padding
+// y - top/bottom padding
+// b - border
+// r - radius
+// fz - font-size
+//
+$btnsSize: (
+	"default": (
+		"default": (
+			"y": 1.4rem,
+			"x": 4.5rem,
+			"b": 0.1rem,
+			"r": 5rem,
+			"fz": 1.8rem,
+		),
+		// if need other size button
+		// 'lg': ('y': 18px, 'x': 35px, 'b': 3px, 'r': 0, 'fz': 22px),,,,,,
+	),
+		"phone": (
+			"default": (
+				"y": 1.4rem,
+				"x": 4.5rem,
+				"b": 0.1rem,
+				"r": 5rem,
+				"fz": 1.8rem,
+			),
+		),
+		"sm-phone": (
+			"default": (
+				"y": 1.2rem,
+				"x": 3rem,
+				"b": 0.1rem,
+				"r": 5rem,
+				"fz": 1.8rem,
+			),
+		),
+	);
+
+$inputSize: (
+	"default": (
+		"default": (
+			"y": 2.4rem,
+			"x": 1.6rem,
+			"b": 0.1rem,
+			"r": 5rem,
+			"fz": 1.5rem,
+		),
+		// if need other size button
+		// 'lg': ('y': 18px, 'x': 35px, 'b': 3px, 'r': 0, 'fz': 22px),,,,,,
+	),
+		"phone": (
+			"default": (
+				"y": 2.4rem,
+				"x": 1.6rem,
+				"b": 0.1rem,
+				"r": 5rem,
+				"fz": 1.5rem,
+			),
+		),
+	);
+
+// -- Input padding left and right
+$input-padding-x: map-get(map-get(map-get($btnsSize, "default"), "default"), "x");

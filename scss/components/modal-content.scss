@@ -1,0 +1,7 @@
+.modal-content {
+	display: none;
+
+	&__inner {
+		@include generalVertSpacing(4rem);
+	}
+}

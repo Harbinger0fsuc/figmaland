@@ -1,0 +1,14 @@
+/* ===============================
+    IMPORT OF GENERAL LAYOUTS' FILES
+================================== */
+//----- Import general files (HEADER)
+@import "./general/header";
+
+//----- Import specific files
+@import "./intro.scss";
+@import "./advantages.scss";
+@import "./subscription.scss";
+@import "./cta.scss";
+
+//----- Import general files (FOOTER)
+@import "./general/footer";

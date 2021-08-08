@@ -1,0 +1,20 @@
+.form-subscription {
+	form {
+		padding: 0;
+		margin: 0;
+	}
+
+	&__inner {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -0.35rem;
+
+		& > * {
+			margin: 0 0.35rem 2rem;
+		}
+	}
+
+	&__input {
+		flex: 1 1 200px;
+	}
+}

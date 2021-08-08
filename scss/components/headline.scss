@@ -1,0 +1,46 @@
+.headline {
+	$this: &;
+
+	display: flex;
+	flex-direction: column;
+
+	& > * {
+		margin-bottom: 1.5rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	& > a {
+		display: inline-block;
+	}
+
+	&__title {
+		margin-bottom: 3.4rem;
+	}
+
+	p {
+		margin-bottom: 2rem;
+
+		a {
+			text-decoration: underline;
+			text-decoration-skip-ink: none;
+		}
+	}
+
+	// Modifiers for the component
+	&--white {
+		color: var(--color-white);
+
+		#{$this}__title {
+			color: inherit;
+		}
+	}
+}
+
+@include media('<=desktop') {
+	.headline {
+		br { display: none; } // In case one applies to <br> to wrap lines
+	}
+}

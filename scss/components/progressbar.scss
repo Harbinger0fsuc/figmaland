@@ -1,0 +1,20 @@
+.progressbar {
+	--progress-radius: 0.95rem;
+
+	height: 6px;
+	overflow: hidden; // just in case style
+	background-color: var(--color-athens-gray);
+	border-radius: var(--progress-radius);
+
+	&__value {
+		width: var(--progress-value-width, 50%);
+		height: 100%;
+		background-color: var(--progress-value-color, var(--bg-color-primary));
+		border-radius: var(--progress-radius);
+	}
+
+	// Modifiers for the element
+	&--lg {
+		height: 15px;
+	}
+}

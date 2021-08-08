@@ -1,0 +1,71 @@
+.nav-toggler {
+	$this: &;
+	// $colors: (
+	// 	"yellow": #fcae00,
+	// 	"light-blue": #3bb0d5,
+	// 	"pink": #d22785,
+	// );
+	&__btn {
+		position: relative;
+		display: block;
+		width: 27px;
+		height: 16px;
+
+		&:hover {
+			#{$this}__line {
+				width: 100%;
+			}
+		}
+	}
+
+	&__line {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		width: 100%;
+		height: 2.1px;
+		background-color: var(--color-black);
+		transition: all var(--animation-duration) var(--animation-timing-function);
+		transform: translateY(-50%);
+
+		&--1 {
+			top: 0;
+			transform: translateY(0);
+		}
+
+		&--2 {
+			width: 75%;
+		}
+
+		&--3 {
+			top: initial;
+			bottom: 0;
+			width: 45%;
+			transform: translateY(0);
+		}
+	}
+
+	// Modifiers for the element
+	&--active {
+		#{$this}__line {
+			width: 100%;
+
+			&--1,
+			&--3 {
+				top: 50%;
+			}
+
+			&--1 {
+				transform: rotate(45deg);
+			}
+
+			&--2 {
+				opacity: 0;
+			}
+
+			&--3 {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}

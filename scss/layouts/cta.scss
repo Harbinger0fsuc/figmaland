@@ -1,0 +1,43 @@
+.cta {
+	padding: 11rem 0 10rem;
+
+	&__inner {
+		@include generalVertSpacing(4rem);
+
+		max-width: 757px;
+		margin: 0 auto;
+	}
+
+	&__headline {
+		max-width: 575px;
+		margin: 0 auto 6rem;
+
+		p {
+			font-size: 1.6rem;
+			line-height: 1.5;
+			text-align: left;
+		}
+	}
+
+	.headline__title {
+		margin-bottom: 3.1rem;
+	}
+
+	&__progress {
+		margin-bottom: 4.5rem;
+	}
+}
+
+@include media("<=md-phone") {
+	.cta {
+		&__inner {
+			max-width: 315px;
+		}
+
+		&__headline {
+			p {
+				text-align: center;
+			}
+		}
+	}
+}

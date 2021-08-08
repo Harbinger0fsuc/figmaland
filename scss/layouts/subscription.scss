@@ -1,0 +1,86 @@
+.subscription {
+	--pb: 5rem;
+	--mb-overlapped: 23rem;
+
+	padding: 9.5rem 0 var(--pb);
+	overflow: hidden;
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		margin: 0 -2.5rem;
+
+		& > * {
+			padding: 0 2.5rem;
+		}
+	}
+
+	&__content {
+		@include generalVertSpacing(4rem);
+
+		flex: 1 1 544px;
+	}
+
+	&__headline {
+		margin-bottom: 2rem;
+	}
+
+	.headline__title {
+		margin-bottom: 2.8rem;
+	}
+
+	&__form {
+		width: 100%;
+		max-width: 465px;
+	}
+
+	&__media {
+		flex: 1 1 auto;
+
+		&--overlapped {
+			margin-bottom: calc((var(--pb) + var(--mb-overlapped)) * -1);
+			pointer-events: none;
+			user-select: none;
+		}
+
+		img {
+			width: 100%;
+			filter: drop-shadow(0 1rem 3rem rgba(0, 20, 29, 0.1)) drop-shadow(0 3rem 6rem rgba(0, 20, 29, 0.1));
+		}
+	}
+}
+
+@include media("<tablet") {
+	.subscription {
+		&__inner {
+			@include generalVertSpacing(4rem);
+
+			flex-direction: column;
+
+			& > * {
+				flex-basis: 100%;
+			}
+		}
+	}
+}
+
+@include media("<=md-phone") {
+	.subscription {
+		&__inner {
+			width: 100%;
+			max-width: 380px;
+			margin: 0 auto;
+			text-align: center;
+
+			& > * {
+				padding: 0;
+			}
+		}
+
+		.form-subscription__inner {
+			& > * {
+				flex-basis: 100%;
+			}
+		}
+	}
+}

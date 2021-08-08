@@ -1,0 +1,13 @@
+.logo {
+	&__link {
+		display: inline-flex;
+	}
+
+	img {
+		width: auto;
+		max-width: 200px;
+		height: auto;
+		max-height: 100px;
+		object-fit: contain;
+	}
+}

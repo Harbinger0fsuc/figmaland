@@ -1,0 +1,71 @@
+@keyframes floatingImage {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-2rem);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.intro {
+	&__inner {
+		position: relative;
+		padding: 9.7rem 0 7rem;
+	}
+
+	&__wrapper {
+		@include generalVertSpacing(4rem);
+	}
+
+	&__headline {
+		margin-bottom: 9.5rem;
+	}
+
+	&__imgoverlapped {
+		position: relative;
+		bottom: -7rem;
+		margin-bottom: -37rem;
+		pointer-events: none;
+		user-select: none;
+
+		&--floating {
+			animation: floatingImage 6s ease-in-out infinite;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+}
+
+@include media("<=desktop") {
+	.intro {
+		&__imgoverlapped {
+			bottom: -4rem;
+		}
+	}
+}
+
+@include media("<tablet") {
+	.intro {
+		&__inner {
+			padding-bottom: 19rem;
+		}
+
+		.decoration {
+			top: 11%;
+		}
+
+		&__imgoverlapped {
+			position: absolute;
+			top: 98%;
+			bottom: auto;
+			margin-bottom: initial;
+		}
+	}
+}

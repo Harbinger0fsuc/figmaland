@@ -1,0 +1,15 @@
+.progress-radial {
+	display: flex;
+
+	&__layer {
+		fill: var(--fill-color, var(--bg-color-primary));
+	}
+
+	&__stats {
+		fill: var(--color-comet);
+	}
+
+	&__target {
+		fill: var(--color-gray-300);
+	}
+}

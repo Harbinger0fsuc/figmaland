@@ -1,0 +1,73 @@
+.advantages {
+	padding: 51rem 0 5.5rem;
+	clip-path: polygon(0 17.5%, 100% 0, 100% 100%, 0 100%);
+	background-color: var(--bg-color-primary);
+
+	&__headline {
+		margin-bottom: 8rem;
+	}
+
+	.grid-common {
+		justify-content: space-between;
+
+		// Cards work without swiper slider (one should delete classes from html "swiper-wrapper etc...");
+		&.swiper-wrapper {
+			flex-wrap: nowrap;
+			justify-content: initial;
+			margin: 0 0 7rem;
+
+			.grid-common__col,
+			.grid-common__item {
+				height: auto;
+			}
+
+			.grid-common__col {
+				display: flex;
+				flex: none;
+				width: initial;
+				padding: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.grid-common__col {
+		flex-basis: 44.5%;
+		width: 44.5%;
+		margin-bottom: 7rem;
+	}
+}
+
+@include media("<tablet") {
+	.advantages {
+		padding-top: 35rem;
+		clip-path: polygon(0 7.5%, 100% 0, 100% 100%, 0 100%);
+
+		.card-slider {
+			padding: 0 var(--gutter);
+			margin: 0 calc(var(--gutter) * -1);
+		}
+
+		.grid-common {
+			&.swiper-wrapper {
+				.grid-common__col {
+					width: 75%;
+				}
+			}
+		}
+	}
+}
+
+@include media("<=sm-phone") {
+	.advantages {
+		padding-top: 25rem;
+
+		.grid-common {
+			&.swiper-wrapper {
+				.grid-common__col {
+					width: 90%;
+				}
+			}
+		}
+	}
+}
